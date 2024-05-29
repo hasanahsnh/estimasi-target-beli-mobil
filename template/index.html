@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estimasi Target Beli Mobil</title>
+    <link rel="stylesheet" href="https://unpkg.com/nice-forms.css@0.1.7/dist/nice-forms.css" />
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="prediksi">
+            <form action="{{ url_for('predict') }}" method="post">
+                <h3>Estimasi Target Beli Mobil</h3>
+                
+                <!-- Input usia -->
+                <label for="Usia">Usia:</label>
+                <select id="Usia" name="Usia" required>
+                    <option value="0">0 - 1 tahun</option>
+                    <option value="1">2 - 5 tahun</option>
+                    <option value="2">6 - 12 tahun</option>
+                    <option value="3">13 - 17 tahun</option>
+                    <option value="4">18 - 24 tahun</option>
+                    <option value="5">25 - 64 tahun</option>
+                    <option value="6">65 tahun ke atas</option>
+                </select>
+                <br><br>  
+                
+                <!-- Input status -->
+                <label for="Status">Status:</label>
+                <select id="Status" name="Status" required>
+                    <option value="0">single</option>
+                    <option value="1">menikah</option>
+                    <option value="2">menikah mempunyai anak</option>
+                    <option value="3">duda/janda</option>
+                </select>
+                <br><br>        
+                
+                <!-- Input kelamin -->
+                <label for="Kelamin">Kelamin:</label>
+                <select id="Kelamin" name="Kelamin" required>
+                    <option value="0">pria</option>
+                    <option value="1">wanita</option>
+                </select>
+                <br><br>
+        
+                <!-- Input penghasilan -->
+                <label for="Penghasilan">Jumlah Penghasilan:</label>
+                <select id="Penghasilan" name="Penghasilan" required>
+                    <option value="0">0-166</option>
+                    <option value="1">167-333</option>
+                    <option value="1">334 ke atas</option>
+                </select>
+                <br><br>
+        
+                <!-- Input jumlah mobil -->
+                <label for="Memiliki_Mobil">Jumlah Mobil yang Dimiliki:</label>
+                <select id="Memiliki_Mobil" name="Memiliki_Mobil" required>
+                    <option value="0">tidak memiliki mobil</option>
+                    <option value="1">1 buah mobil</option>
+                    <option value="2">lebih dari 1 buah mobil</option>
+                </select>
+                <br><br>
+
+                <button type="submit">Prediksi</button>
+
+                <div class="hasil">
+                    {% if prediction_results %}
+                        <h2>Hasil Estimasi Target Beli Mobil: </h2>
+                        <h3>Prediksi "{{ prediction_results.predicted_value }}"</h3>
+                        <h3>Nilai Prediksi "{{ prediction_results.hasil_prediksi }}"</h3>
+                    {% endif %}
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
