@@ -4,7 +4,7 @@ from sklearn.linear_model import LinearRegression
 import pickle
 
 # Membaca dataset
-df = pd.read_csv('dataset/angka_calonpembelimobil.csv')
+df = pd.read_csv('dataset/data-fix-calon-pembeli-mobil.csv')
 
 # Memisahkan fitur (X) dan target (y)
 X = df[['Usia', 'Status', 'Kelamin', 'Penghasilan', 'Memiliki_Mobil']]
