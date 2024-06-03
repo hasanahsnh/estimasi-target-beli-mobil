@@ -7,7 +7,7 @@ import pickle
 df = pd.read_csv('dataset/data-fix-calon-pembeli-mobil.csv')
 
 # Memisahkan fitur (X) dan target (y)
-X = df[['Usia', 'Status', 'Kelamin', 'Penghasilan', 'Memiliki_Mobil']]
+X = df[['Usia', 'Status', 'Kelamin', 'Memiliki_Mobil', 'Penghasilan']]
 y = df['Beli_Mobil']  # Target perkiraan
 
 # Membagi data menjadi data latih (training set) dan data uji (test set)

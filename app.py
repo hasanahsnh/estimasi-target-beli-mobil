@@ -18,16 +18,17 @@ def predict():
     usia = int(request.form['Usia'])
     status = int(request.form['Status'])
     kelamin = int(request.form['Kelamin'])
-    penghasilan = int(request.form['Penghasilan'])
     memiliki_mobil = int(request.form['Memiliki_Mobil'])
+    penghasilan = int(request.form['Penghasilan'])
+    
     
     # Membuat dataframe dengan input
     new_data = pd.DataFrame({
         'Usia': [usia],
         'Status': [status],
         'Kelamin': [kelamin],
-        'Penghasilan': [penghasilan],
-        'Memiliki_Mobil': [memiliki_mobil]
+        'Memiliki_Mobil': [memiliki_mobil],
+        'Penghasilan': [penghasilan]
     })
     
     # Melakukan prediksi jumlah mobil yang dimiliki
