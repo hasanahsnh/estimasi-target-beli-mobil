@@ -43,7 +43,7 @@
                     <option value="1">1: wanita</option>
                 </select>
                 <br><br>
-        
+
                 <!-- Input jumlah mobil -->
                 <label for="Memiliki_Mobil">Jumlah Mobil yang Dimiliki:</label>
                 <select id="Memiliki_Mobil" name="Memiliki_Mobil" required>
@@ -52,13 +52,13 @@
                     <option value="2">2: lebih dari 1 buah mobil</option>
                 </select>
                 <br><br>
-
+        
                 <!-- Input penghasilan -->
                 <label for="Penghasilan">Jumlah Penghasilan:</label>
                 <select id="Penghasilan" name="Penghasilan" required>
                     <option value="0">0: 0-166</option>
                     <option value="1">1: 167-333</option>
-                    <option value="1">2: 334 ke atas</option>
+                    <option value="2">2: 334 ke atas</option>
                 </select>
                 <br><br>
 
@@ -69,6 +69,9 @@
                         <h2>Hasil Estimasi Target Beli Mobil: </h2>
                         <h3>Prediksi "{{ prediction_results.predicted_value }}"</h3>
                         <h3>Nilai Prediksi "{{ prediction_results.hasil_prediksi }}"</h3>
+                        <h3>Mean Absolute Error (MAE) : {{ prediction_results.mean_absolute_error }}</h3>
+                        <h3>Miss Classification Error : {{ prediction_results.miss_classification_error }}</h3>
+                        <h3>Foreground Error : {{ prediction_results.foreground_error }}</h3>
                     {% endif %}
                 </div>
             </form>
